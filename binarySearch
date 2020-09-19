@@ -17,3 +17,28 @@ arr = [1,2,3,4,5,6,7,8]
 ind = binarySearchIter(arr, 1)
 print(ind)
           
+
+# Binary Search Recursion
+
+def binSearchRec(arr, key, low, hi):
+    if low <= hi:
+        
+        mid = (low+hi)//2
+    
+        if arr[mid] == key:
+            return mid
+        
+        elif arr[mid]< key:
+            return binSearchRec(arr, key, mid+1, hi)
+    
+        else:
+            return binSearchRec(arr, key, low, mid-1)
+    
+    return -1
+    
+arr = [1,2,8,9,11,14,15,17]
+ind = binSearchRec(arr, 1, 0, len(arr)-1)
+print(ind)
+
+
+
