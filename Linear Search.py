@@ -35,7 +35,8 @@ arr = [1, 2, 3, 4, 5, 6, 7]
 index = linearSearchRec(arr, 5, 0)
 print(index)
 
-# Linear Search LinkedList Iteration
+
+## Linear Search Linked List - Iteration and Recursion
 
 class Node:
 	def __init__(self, data):
@@ -61,7 +62,9 @@ def prinLL(head):
         print(str(head.data) + '->', end = ' ')
         head = head.next
     print('None')    
-    
+ 
+	
+# Linear Search Linked List Iteration
 
 def linearSearchLLIter(head, key):
     i = 0
@@ -71,7 +74,22 @@ def linearSearchLLIter(head, key):
         head = head.next
         i += 1
     return -1
+
+# Linear Search Linked List Recursion
+
+def linearSearchLLRec(head, key, i):
+    if head is None:
+        return -1
+        
+    if head.data==key:
+        return i
+        
+    return linearSearchLLRec(head.next, key, i+1)
+    
+    
         
 prinLL(newNode1)
-ind = linearSearchLLIter(newNode1, 15)
+ind = linearSearchLLIter(newNode1, 1)
+indRec = linearSearchLLRec(newNode1, 1, 0)
 print("index: ", ind)
+print("index: ", indRec)
